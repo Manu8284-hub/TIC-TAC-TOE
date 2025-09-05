@@ -1,0 +1,96 @@
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #ffffff;
+}
+
+.game-container {
+  background: rgba(30, 41, 59, 0.9);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  text-align: center;
+  max-width: 400px;
+  width: 90vw;
+  border: 2px solid #4f8ef7;
+}
+
+.status {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #4f8ef7;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  border: 2px solid #4f8ef7;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  margin: 5px auto;
+}
+
+.cell:hover:not(.disabled) {
+  background: rgba(79, 142, 247, 0.3);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #4f8ef7;
+}
+
+.cell.player-x {
+  color: #f44336; /* Red for X */
+}
+
+.cell.player-o {
+  color: #4CAF50; /* Green for O */
+}
+
+.cell.disabled {
+  cursor: not-allowed;
+}
+
+#reset {
+  background: #4f8ef7;
+  color: #ffffff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  font-weight: bold;
+}
+
+#reset:hover {
+  background: #3a6edb;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #4f8ef7;
+}
+
+@media (max-width: 500px) {
+  .cell {
+    width: 70px;
+    height: 70px;
+    font-size: 1.5rem;
+  }
+}
